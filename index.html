@@ -188,6 +188,22 @@
   .projeto ul li strong { color: var(--texto); }
   @media (max-width: 860px) { .projeto { grid-template-columns: 1fr; } }
 
+
+  /* ---------- todos os projetos ---------- */
+  .filtros { display: flex; flex-wrap: wrap; gap: 8px; margin: 56px 0 20px; }
+  .filtro { font: inherit; font-size: .85rem; color: var(--suave); background: var(--fundo-2); border: 1px solid var(--borda); border-radius: 999px; padding: 8px 16px; cursor: pointer; min-height: 40px; }
+  .filtro:hover { color: var(--neon); }
+  .filtro[aria-pressed="true"] { color: #03140a; background: var(--neon); border-color: var(--neon); font-weight: 700; }
+  .proj { display: flex; flex-direction: column; }
+  .proj[hidden] { display: none; }
+  .proj__topo { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .proj__cat { font-family: var(--mono); font-size: .75rem; color: var(--neon); }
+  .proj .tags { margin: 14px 0 16px; }
+  .proj__links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 14px; font-size: .9rem; font-weight: 600; }
+  .proj__links a { text-decoration: none; }
+  .proj__links a:hover { text-decoration: underline; }
+  .proj__privado { color: var(--suave); font-size: .85rem; }
+
   /* ---------- habilidades ---------- */
   .habilidades { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .habilidades h3 { font-family: var(--mono); font-size: .9rem; color: var(--neon); margin: 0 0 12px; }
@@ -259,9 +275,9 @@
 -->
 <script>
   const CONTATO = {
-    whatsapp: '5596981157991',
+    whatsapp: '5596981157791',
     email: 'maurcioprojetos@gmail.com',
-    instagram: 'https://instagram.com/SEU_USUARIO',
+    instagram: 'https://instagram.com/mauricio__oficialll',
     github: 'https://github.com/Mauricio777466',
     linkedin: 'https://www.linkedin.com/in/SEU_USUARIO',
     mensagem: 'Olá, Mauricio! Vi seu portfólio e quero um orçamento.',
@@ -319,7 +335,7 @@
 
   <div class="container numeros revelar">
     <div class="numero"><b>3</b><span>formações em TI</span></div>
-    <div class="numero"><b>1</b><span>loja virtual própria no ar</span></div>
+    <div class="numero"><b>14</b><span>projetos no portfólio</span></div>
     <div class="numero"><b>C# · React</b><span>stack principal</span></div>
     <div class="numero"><b>100%</b><span>atendimento direto comigo</span></div>
   </div>
@@ -381,9 +397,9 @@
           <p>Controle de vendas, estoque, clientes e relatórios feitos para o jeito que o seu negócio funciona.</p>
         </article>
         <article class="cartao revelar">
-          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg></div>
-          <h3>Banco de dados</h3>
-          <p>Modelagem, organização e migração dos seus dados, com backup e acesso seguro.</p>
+          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <h3>Tráfego pago</h3>
+          <p>Anúncios no Google, Instagram e Facebook para levar clientes certos até o seu site e o seu WhatsApp.</p>
         </article>
         <article class="cartao revelar">
           <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
@@ -404,8 +420,8 @@
     <div class="container">
       <div class="secao__cabeca revelar">
         <span class="secao__rotulo">// projetos</span>
-        <h2>Projeto em destaque</h2>
-        <p>Um sistema completo, criado por mim do zero e funcionando com clientes reais.</p>
+        <h2>Meus projetos</h2>
+        <p>Sites para clientes, sistemas, automações e apps que eu criei do zero. Começando pelo meu projeto em destaque.</p>
       </div>
 
       <div class="projeto">
@@ -443,6 +459,108 @@
             <a class="btn btn--cheio" href="https://mauriciomarian0-001-site1.jtempurl.com" target="_blank" rel="noopener">Ver a loja no ar ↗</a>
           </div>
         </div>
+      </div>
+
+      <div class="filtros" role="group" aria-label="Filtrar projetos">
+        <button class="filtro" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button class="filtro" type="button" data-filtro="site" aria-pressed="false">Sites</button>
+        <button class="filtro" type="button" data-filtro="sistema" aria-pressed="false">Sistemas</button>
+        <button class="filtro" type="button" data-filtro="auto" aria-pressed="false">Automações</button>
+        <button class="filtro" type="button" data-filtro="ia" aria-pressed="false">IA</button>
+        <button class="filtro" type="button" data-filtro="app" aria-pressed="false">Apps</button>
+      </div>
+      <div class="grade-3" id="lista-projetos">
+        <article class="cartao proj revelar" data-cat="site">
+          <div class="proj__topo"><span class="proj__cat">Cliente</span><span class="status status--ok">No ar</span></div>
+          <h3>Galpões Macapá</h3>
+          <p>Site para o cliente Felipe Castro divulgar galpões para locação, com campanha no Google Ads que eu crio e gerencio.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Google Ads</span></div>
+          <div class="proj__links"><a href="https://galpaoap.app.br" target="_blank" rel="noopener">Ver site ↗</a></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="sistema">
+          <div class="proj__topo"><span class="proj__cat">Produto MS Tech</span><span class="status status--ok">No ar</span></div>
+          <h3>Gestão Comercial</h3>
+          <p>Sistema para lojas com vendas, caixa/PDV, estoque e financeiro. Roda no Windows e tem app Android para o dono acompanhar pelo celular.</p>
+          <div class="tags"><span class="tag">Windows</span><span class="tag">Android</span><span class="tag">PostgreSQL</span></div>
+          <div class="proj__links"><a href="https://mauricio777466.github.io/gestao-comercial-downloads/" target="_blank" rel="noopener">Baixar ↗</a></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="site">
+          <div class="proj__topo"><span class="proj__cat">Produto MS Tech</span><span class="status status--ok">No ar</span></div>
+          <h3>Prévia grátis</h3>
+          <p>Página onde o lojista pede e recebe uma prévia do site da própria loja antes de fechar o serviço.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <div class="proj__links"><a href="https://previa.mstechsolucoes.com.br" target="_blank" rel="noopener">Ver site ↗</a></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="site">
+          <div class="proj__topo"><span class="proj__cat">Produto MS Tech</span><span class="status">Demonstração</span></div>
+          <h3>MS Tech Imóveis</h3>
+          <p>Catálogo imobiliário de Macapá com tours 360° dos imóveis e painel para a imobiliária.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span></div>
+          <div class="proj__links"><a href="https://imoveis.mstechsolucoes.com.br" target="_blank" rel="noopener">Ver demonstração ↗</a></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="sistema">
+          <div class="proj__topo"><span class="proj__cat">Plataforma</span><span class="status status--ok">No ar</span></div>
+          <h3>Nosso Cuidado AP</h3>
+          <p>Conecta enfermeiros, técnicos e cuidadores a famílias e clínicas no Amapá, com vagas, perfis aprovados e contato pelo WhatsApp.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">LGPD</span></div>
+          <div class="proj__links"><a href="https://nosso-cuidado-ap.vercel.app" target="_blank" rel="noopener">Ver site ↗</a></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="sistema">
+          <div class="proj__topo"><span class="proj__cat">Sistema</span><span class="status status--ok">No ar</span></div>
+          <h3>Lista da Vez</h3>
+          <p>Fila de atendimento em tempo real e metas de vendas para lojas: vendedor entra com PIN e o gerente acompanha tudo no painel.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">Tempo real</span></div>
+          <div class="proj__links"><a href="https://lista-da-vez-chi.vercel.app" target="_blank" rel="noopener">Ver sistema ↗</a></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="sistema">
+          <div class="proj__topo"><span class="proj__cat">Sistema</span><span class="status status--ok">Concluído</span></div>
+          <h3>Visão de Águia</h3>
+          <p>Sistema de inscrições de atletas: cadastro, matrícula por temporada, envio de documentos e painel para o técnico aprovar.</p>
+          <div class="tags"><span class="tag">C#</span><span class="tag">ASP.NET Core</span><span class="tag">EF Core</span></div>
+          <div class="proj__links"><span class="proj__privado">Código privado · peça uma demonstração</span></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="sistema">
+          <div class="proj__topo"><span class="proj__cat">Dashboard</span><span class="status">Em evolução</span></div>
+          <h3>Painel de vendas</h3>
+          <p>Painel que lê planilhas ou o banco da loja e gera gráficos e relatórios sozinho, com exportação para Excel, PDF e PowerPoint.</p>
+          <div class="tags"><span class="tag">C#</span><span class="tag">Blazor</span><span class="tag">MySQL</span><span class="tag">IA</span></div>
+          <div class="proj__links"><span class="proj__privado">Código privado · peça uma demonstração</span></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="auto">
+          <div class="proj__topo"><span class="proj__cat">Automação</span><span class="status status--ok">Em uso</span></div>
+          <h3>ZapBot</h3>
+          <p>Bot de WhatsApp com funil de vendas: menu automático, envio de prévia do site e alerta quando um cliente demonstra interesse.</p>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">WhatsApp</span></div>
+          <div class="proj__links"><span class="proj__privado">Código privado · peça uma demonstração</span></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="auto">
+          <div class="proj__topo"><span class="proj__cat">Automação</span><span class="status status--ok">Concluído</span></div>
+          <h3>Bot de ofertas Mercado Livre</h3>
+          <p>Busca ofertas no Mercado Livre, gera link de afiliado e posta sozinho em um grupo do WhatsApp.</p>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">Playwright</span><span class="tag">WhatsApp</span></div>
+          <div class="proj__links"><a href="https://github.com/Mauricio777466/catalogo-mercadolivre" target="_blank" rel="noopener">Ver código ↗</a></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="auto">
+          <div class="proj__topo"><span class="proj__cat">Automação</span><span class="status status--ok">Em uso</span></div>
+          <h3>Robô de posts</h3>
+          <p>Cria a arte e publica posts de tecnologia no Instagram três vezes por semana, de graça, pelo GitHub Actions.</p>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">GitHub Actions</span><span class="tag">API do Instagram</span></div>
+          <div class="proj__links"><a href="https://github.com/Mauricio777466/robo-posts" target="_blank" rel="noopener">Ver código ↗</a></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="ia">
+          <div class="proj__topo"><span class="proj__cat">Visão computacional</span><span class="status status--ok">Concluído</span></div>
+          <h3>Reconhecimento facial</h3>
+          <p>Identifica rostos ao vivo pela webcam ou câmera IP, mostra alertas e registra cada acesso num painel com histórico.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Testes</span></div>
+          <div class="proj__links"><a href="https://github.com/Mauricio777466/projeto-reconhecimento-facial" target="_blank" rel="noopener">Ver código ↗</a></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="app">
+          <div class="proj__topo"><span class="proj__cat">App</span><span class="status">Em desenvolvimento</span></div>
+          <h3>Dieta & Treino</h3>
+          <p>App de dieta e treino para Android, com módulo para personal trainers acompanharem os alunos.</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Firebase</span></div>
+          <div class="proj__links"><span class="proj__privado">Código privado · peça uma demonstração</span></div>
+        </article>
       </div>
     </div>
   </section>
@@ -613,6 +731,15 @@
     tick()
   }
   escrever()
+
+
+  // ---------- filtro de projetos ----------
+  const filtros = document.querySelectorAll('.filtro')
+  filtros.forEach((b) => b.addEventListener('click', () => {
+    filtros.forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'))
+    const f = b.dataset.filtro
+    document.querySelectorAll('.proj').forEach((c) => { c.hidden = f !== 'todos' && c.dataset.cat !== f; c.classList.add('visivel') })
+  }))
 
   // ---------- revelar ao rolar ----------
   const alvos = document.querySelectorAll('.revelar')
