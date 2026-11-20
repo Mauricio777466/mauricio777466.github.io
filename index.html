@@ -189,6 +189,22 @@
   @media (max-width: 860px) { .projeto { grid-template-columns: 1fr; } }
 
 
+
+  /* ---------- cases em destaque ---------- */
+  .cases { display: grid; gap: 28px; }
+  .case { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; background: var(--cartao); border: 1px solid var(--borda); border-radius: 20px; padding: 28px; }
+  .case:nth-child(even) .case__tela { order: 2; }
+  .case__tela { background: #070b09; border: 1px solid var(--borda); border-radius: 14px; overflow: hidden; }
+  .case__img { aspect-ratio: 16 / 10; background: var(--fundo-2) center top / cover no-repeat; display: grid; place-items: center; color: var(--suave); font-family: var(--mono); font-size: .85rem; }
+  .case__img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .case__rotulo { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .case h3 { font-size: 1.6rem; margin: 12px 0 14px; line-height: 1.2; }
+  .case dl { margin: 0 0 18px; display: grid; gap: 10px; }
+  .case dt { font-family: var(--mono); font-size: .78rem; color: var(--neon); }
+  .case dd { margin: 0; color: var(--suave); }
+  .case .tags { margin: 0 0 20px; }
+  @media (max-width: 860px) { .case { grid-template-columns: 1fr; padding: 18px; } .case:nth-child(even) .case__tela { order: 0; } }
+
   /* ---------- todos os projetos ---------- */
   .filtros { display: flex; flex-wrap: wrap; gap: 8px; margin: 56px 0 20px; }
   .filtro { font: inherit; font-size: .85rem; color: var(--suave); background: var(--fundo-2); border: 1px solid var(--borda); border-radius: 999px; padding: 8px 16px; cursor: pointer; min-height: 40px; }
@@ -304,17 +320,17 @@
     <div class="container hero__grade">
       <div>
         <span class="etiqueta"><span class="ponto"></span> Disponível para novos projetos</span>
-        <h1>Oi, eu sou o Mauricio.<br>Crio <span class="destaque">sites e sistemas</span> seguros para o seu negócio.</h1>
+        <h1>Sites, sistemas e anúncios que <span class="destaque">trazem clientes</span> para o seu negócio.</h1>
         <p class="lead">
-          Desenvolvedor e analista de TI em Macapá-AP. Faço lojas virtuais, sites e sistemas sob medida,
-          do banco de dados ao pagamento por Pix, com a segurança em primeiro lugar.
+          Sou o Mauricio, desenvolvedor e fundador da MS Tech Soluções, em Macapá-AP. Crio o site,
+          organizo o caixa e o estoque e faço o seu negócio aparecer no Google, com atendimento direto comigo.
         </p>
         <div class="acoes">
           <a class="btn btn--cheio js-zap" href="#contato">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 1.9 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21.3c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.6.9 1-3.5-.2-.4a9.4 9.4 0 1 1 8.2 4.6Zm5.2-7c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1l-.9 1.2c-.2.2-.3.2-.6.1a7.7 7.7 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
             Pedir orçamento
           </a>
-          <a class="btn btn--vazio" href="#projetos">Ver projetos</a>
+          <a class="btn btn--vazio" href="#projetos">Ver cases</a>
         </div>
 
         <div class="terminal" aria-hidden="true">
@@ -334,10 +350,10 @@
   </section>
 
   <div class="container numeros revelar">
-    <div class="numero"><b>3</b><span>formações em TI</span></div>
-    <div class="numero"><b>14</b><span>projetos no portfólio</span></div>
-    <div class="numero"><b>C# · React</b><span>stack principal</span></div>
-    <div class="numero"><b>100%</b><span>atendimento direto comigo</span></div>
+    <div class="numero"><b>14</b><span>projetos criados do zero</span></div>
+    <div class="numero"><b>3</b><span>produtos próprios da MS Tech</span></div>
+    <div class="numero"><b>Google Ads</b><span>campanhas que eu gerencio</span></div>
+    <div class="numero"><b>Todo o Brasil</b><span>atendimento online</span></div>
   </div>
 
   <!-- ================= SOBRE ================= -->
@@ -353,9 +369,9 @@
           bem construído <em>e</em> bem protegido.
         </p>
         <p>
-          Não fico só na teoria: criei e coloquei no ar a minha própria loja virtual, a
-          <strong>Mauricio Store</strong>, com pagamento por Pix, painel administrativo, controle de estoque
-          e até cadastro de produtos por foto usando inteligência artificial.
+          Não fico só na teoria: pela <strong>MS Tech Soluções</strong> eu atendo clientes reais, crio
+          produtos próprios, como o sistema <strong>Gestão Comercial</strong>, e cuido dos anúncios no Google
+          para os sites que entrego.
         </p>
         <p>
           Agora uso essa experiência para ajudar outros negócios a venderem mais pela internet,
@@ -420,48 +436,65 @@
     <div class="container">
       <div class="secao__cabeca revelar">
         <span class="secao__rotulo">// projetos</span>
-        <h2>Meus projetos</h2>
-        <p>Sites para clientes, sistemas, automações e apps que eu criei do zero. Começando pelo meu projeto em destaque.</p>
+        <h2>Cases em destaque</h2>
+        <p>Projetos reais, com o problema que cada um resolve. Mais abaixo, todos os outros sites, sistemas e automações que eu criei.</p>
       </div>
 
-      <div class="projeto">
-        <div class="navegador revelar" aria-hidden="true">
-          <div class="navegador__barra">
-            <div class="bolinhas"><i></i><i></i><i></i></div>
-            <div class="navegador__url">🔒 mauriciostore · loja virtual</div>
+      <div class="cases">
+        <article class="case">
+          <div class="case__tela revelar">
+            <div class="navegador__barra" aria-hidden="true"><div class="bolinhas"><i></i><i></i><i></i></div><div class="navegador__url">🔒 galpaoap.app.br</div></div>
+            <div class="case__img"><img src="https://image.thum.io/get/width/1200/crop/750/https://galpaoap.app.br" alt="Página inicial de galpaoap.app.br" loading="lazy" width="1200" height="750"></div>
           </div>
-          <div class="loja">
-            <div class="loja__topo"><span>Mauricio<em>Store</em></span><span>🛒</span></div>
-            <div class="loja__banner">Frete grátis em Macapá acima de R$ 50 ⚡</div>
-            <div class="loja__itens">
-              <div class="loja__item"><div>🎧</div><b>Fone Bluetooth</b><span>R$ 149,90</span></div>
-              <div class="loja__item"><div>⌚</div><b>Smartwatch</b><span>R$ 299,90</span></div>
-              <div class="loja__item"><div>🔌</div><b>Carregador</b><span>R$ 89,90</span></div>
-            </div>
+          <div class="revelar">
+            <div class="case__rotulo"><span class="proj__cat">Case de cliente</span><span class="status status--ok">No ar</span></div>
+            <h3>Galpões Macapá: site e Google Ads para alugar galpões</h3>
+            <dl>
+              <div><dt>O desafio</dt><dd>O cliente Felipe Castro precisava mostrar os galpões disponíveis e receber contatos de quem procura espaço para alugar em Macapá.</dd></div>
+              <div><dt>O que eu fiz</dt><dd>Criei um site rápido, com fotos, informações de cada galpão e contato direto, e montei a campanha no Google Ads que eu mesmo gerencio.</dd></div>
+              <div><dt>Resultado</dt><dd>Site no ar em galpaoap.app.br e anúncios rodando desde novembro de 2026, levando interessados direto para o WhatsApp do cliente.</dd></div>
+            </dl>
+            <div class="tags"><span class="tag">Site</span><span class="tag">Google Ads</span><span class="tag">Gestão de campanha</span></div>
+            <a class="btn btn--cheio" href="https://galpaoap.app.br" target="_blank" rel="noopener">Ver o site ↗</a>
           </div>
-        </div>
-
-        <div class="revelar">
-          <h3 style="font-size:1.5rem;margin:0">Mauricio Store — loja de eletrônicos</h3>
-          <div class="tags">
-            <span class="tag">C# / .NET</span><span class="tag">ASP.NET Core</span><span class="tag">React</span>
-            <span class="tag">TypeScript</span><span class="tag">SQL Server</span><span class="tag">Pix</span><span class="tag">IA</span>
+        </article>
+        <article class="case">
+          <div class="case__tela revelar">
+            <div class="navegador__barra" aria-hidden="true"><div class="bolinhas"><i></i><i></i><i></i></div><div class="navegador__url">🔒 Gestão Comercial</div></div>
+            <div class="case__img"><img src="https://image.thum.io/get/width/1200/crop/750/https://mauricio777466.github.io/gestao-comercial-downloads/" alt="Página inicial de Gestão Comercial" loading="lazy" width="1200" height="750"></div>
           </div>
-          <ul>
-            <li><strong>Pagamento por Pix</strong> com QR Code na própria página e confirmação automática</li>
-            <li><strong>Painel administrativo</strong> com pedidos, estoque, variações (modelo/cor) e relatórios</li>
-            <li><strong>Cadastro por foto com IA</strong>: tira a foto da caixa e o produto é preenchido sozinho</li>
-            <li><strong>Importador do Mercado Livre</strong> e cálculo de frete automático por CEP</li>
-            <li><strong>Área de parceiras</strong> com repasses e gerador de contratos</li>
-            <li><strong>Segurança</strong>: login com JWT, senhas com BCrypt, HTTPS e proteção de webhooks</li>
-          </ul>
-          <div class="acoes">
-            <a class="btn btn--cheio" href="https://mauriciomarian0-001-site1.jtempurl.com" target="_blank" rel="noopener">Ver a loja no ar ↗</a>
+          <div class="revelar">
+            <div class="case__rotulo"><span class="proj__cat">Produto MS Tech</span><span class="status status--ok">Disponível</span></div>
+            <h3>Gestão Comercial: caixa, estoque e financeiro da loja</h3>
+            <dl>
+              <div><dt>O desafio</dt><dd>Pequenas lojas controlam vendas no caderno ou em sistemas caros e não sabem o que vendeu nem o que tem no estoque.</dd></div>
+              <div><dt>O que eu fiz</dt><dd>Desenvolvi um sistema completo de PDV, estoque e financeiro para Windows, com app Android para o dono acompanhar a loja pelo celular.</dd></div>
+              <div><dt>Resultado</dt><dd>Instaladores prontos para servidor, caixa e celular, com atualização que não mexe nos dados da loja.</dd></div>
+            </dl>
+            <div class="tags"><span class="tag">PDV</span><span class="tag">Estoque</span><span class="tag">App Android</span><span class="tag">PostgreSQL</span></div>
+            <a class="btn btn--cheio" href="https://mauricio777466.github.io/gestao-comercial-downloads/" target="_blank" rel="noopener">Conhecer e baixar ↗</a>
           </div>
-        </div>
+        </article>
+        <article class="case">
+          <div class="case__tela revelar">
+            <div class="navegador__barra" aria-hidden="true"><div class="bolinhas"><i></i><i></i><i></i></div><div class="navegador__url">🔒 imoveis.mstechsolucoes.com.br</div></div>
+            <div class="case__img"><img src="https://image.thum.io/get/width/1200/crop/750/https://imoveis.mstechsolucoes.com.br" alt="Página inicial de imoveis.mstechsolucoes.com.br" loading="lazy" width="1200" height="750"></div>
+          </div>
+          <div class="revelar">
+            <div class="case__rotulo"><span class="proj__cat">Produto MS Tech</span><span class="status">Demonstração</span></div>
+            <h3>MS Tech Imóveis: catálogo com tour 360° dos imóveis</h3>
+            <dl>
+              <div><dt>O desafio</dt><dd>Imobiliárias perdem tempo com visitas de quem só queria conhecer o imóvel por dentro.</dd></div>
+              <div><dt>O que eu fiz</dt><dd>Criei um catálogo imobiliário para Macapá em que o cliente faz um tour 360° pelo celular antes de marcar a visita.</dd></div>
+              <div><dt>Resultado</dt><dd>Demonstração no ar, pronta para ser adaptada à marca de qualquer imobiliária.</dd></div>
+            </dl>
+            <div class="tags"><span class="tag">Next.js</span><span class="tag">Tour 360°</span><span class="tag">Supabase</span></div>
+            <a class="btn btn--cheio" href="https://imoveis.mstechsolucoes.com.br" target="_blank" rel="noopener">Ver demonstração ↗</a>
+          </div>
+        </article>
       </div>
-
-      <div class="filtros" role="group" aria-label="Filtrar projetos">
+      <h3 style="font-size:1.4rem;margin:64px 0 0">Todos os projetos</h3>
+      <div class="filtros" style="margin-top:16px" role="group" aria-label="Filtrar projetos">
         <button class="filtro" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
         <button class="filtro" type="button" data-filtro="site" aria-pressed="false">Sites</button>
         <button class="filtro" type="button" data-filtro="sistema" aria-pressed="false">Sistemas</button>
@@ -471,32 +504,11 @@
       </div>
       <div class="grade-3" id="lista-projetos">
         <article class="cartao proj revelar" data-cat="site">
-          <div class="proj__topo"><span class="proj__cat">Cliente</span><span class="status status--ok">No ar</span></div>
-          <h3>Galpões Macapá</h3>
-          <p>Site para o cliente Felipe Castro divulgar galpões para locação, com campanha no Google Ads que eu crio e gerencio.</p>
-          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Google Ads</span></div>
-          <div class="proj__links"><a href="https://galpaoap.app.br" target="_blank" rel="noopener">Ver site ↗</a></div>
-        </article>
-        <article class="cartao proj revelar" data-cat="sistema">
-          <div class="proj__topo"><span class="proj__cat">Produto MS Tech</span><span class="status status--ok">No ar</span></div>
-          <h3>Gestão Comercial</h3>
-          <p>Sistema para lojas com vendas, caixa/PDV, estoque e financeiro. Roda no Windows e tem app Android para o dono acompanhar pelo celular.</p>
-          <div class="tags"><span class="tag">Windows</span><span class="tag">Android</span><span class="tag">PostgreSQL</span></div>
-          <div class="proj__links"><a href="https://mauricio777466.github.io/gestao-comercial-downloads/" target="_blank" rel="noopener">Baixar ↗</a></div>
-        </article>
-        <article class="cartao proj revelar" data-cat="site">
           <div class="proj__topo"><span class="proj__cat">Produto MS Tech</span><span class="status status--ok">No ar</span></div>
           <h3>Prévia grátis</h3>
           <p>Página onde o lojista pede e recebe uma prévia do site da própria loja antes de fechar o serviço.</p>
           <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
           <div class="proj__links"><a href="https://previa.mstechsolucoes.com.br" target="_blank" rel="noopener">Ver site ↗</a></div>
-        </article>
-        <article class="cartao proj revelar" data-cat="site">
-          <div class="proj__topo"><span class="proj__cat">Produto MS Tech</span><span class="status">Demonstração</span></div>
-          <h3>MS Tech Imóveis</h3>
-          <p>Catálogo imobiliário de Macapá com tours 360° dos imóveis e painel para a imobiliária.</p>
-          <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span></div>
-          <div class="proj__links"><a href="https://imoveis.mstechsolucoes.com.br" target="_blank" rel="noopener">Ver demonstração ↗</a></div>
         </article>
         <article class="cartao proj revelar" data-cat="sistema">
           <div class="proj__topo"><span class="proj__cat">Plataforma</span><span class="status status--ok">No ar</span></div>
@@ -560,6 +572,13 @@
           <p>App de dieta e treino para Android, com módulo para personal trainers acompanharem os alunos.</p>
           <div class="tags"><span class="tag">Flutter</span><span class="tag">Firebase</span></div>
           <div class="proj__links"><span class="proj__privado">Código privado · peça uma demonstração</span></div>
+        </article>
+        <article class="cartao proj revelar" data-cat="site">
+          <div class="proj__topo"><span class="proj__cat">Loja própria</span><span class="status status--ok">No ar</span></div>
+          <h3>Mauricio Store</h3>
+          <p>Loja virtual de eletrônicos com Pix automático, painel de pedidos e estoque e cadastro de produto por foto com IA.</p>
+          <div class="tags"><span class="tag">C# / .NET</span><span class="tag">React</span><span class="tag">SQL Server</span><span class="tag">Pix</span></div>
+          <div class="proj__links"><a href="https://mauriciomarian0-001-site1.jtempurl.com" target="_blank" rel="noopener">Ver loja ↗</a></div>
         </article>
       </div>
     </div>
